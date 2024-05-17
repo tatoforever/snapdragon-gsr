@@ -28,7 +28,6 @@ For more information and up-to-date versions, check the official GSR git page:
   
 - **c**: Your screen-sampled color.
 - **i.uv**: Screen space UVs.
-- **_MainTex_TexelSize**: Configured the same way as `ViewportInfo`.
 
 Example usage:
 ```hlsl

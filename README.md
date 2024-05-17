@@ -22,7 +22,7 @@ For more information and up-to-date versions, check the official GSR git page:
 
 ### Function Parameters Explanation:
 
-- **ViewportInfo**: Should be a `float4` containing `{1.0/low_res_tex_width, 1.0/low_res_tex_height, low_res_tex_width, low_res_tex_height}`.
+- **_MainTex_TexelSize**: Should be a `float4` containing `{1.0/low_res_tex_width, 1.0/low_res_tex_height, low_res_tex_width, low_res_tex_height}`.
   - The `xy` components will be used to shift UVs to read adjacent texels.
   - The `zw` components will be used to map from UV space `[0, 1][0, 1]` to image space `[0, w][0, h]`.
   

@@ -26,9 +26,10 @@ For more information and up-to-date versions, check the official GSR git page:
   - The `xy` components will be used to shift UVs to read adjacent texels.
   - The `zw` components will be used to map from UV space `[0, 1][0, 1]` to image space `[0, w][0, h]`.
   
-- **c**: Your screen-sampled color.
+- **color**: Your your final filtered image
 - **i.uv**: Screen space UVs.
 
 Example usage:
 ```hlsl
-SgsrYuvH(c, i.uv, _MainTex_TexelSize);
+half4 color = half4(0, 0, 0, 1);
+SgsrYuvH(color, i.uv, _MainTex_TexelSize);

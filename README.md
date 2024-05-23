@@ -9,7 +9,7 @@ For more information and up-to-date versions, check the official GSR git page:
 ### SGSR is used the same way FSR1 is used. Like this:
 
 - Call SGSR pass right after you anti-alias (if) your image and before applying any kind of noise or grain to it
-- Provide a low ress RT (the size you are rendering your scene) to the SgsrYuvH() function. This RT will be the color you will be outputing to the screen or to other render passes.
+- Provide a low ress RT (the size you are rendering your scene) to the SGSR pass.
 
 Note: Keep in mind your viewport/screen size must be the size you want to upscale (max up to 2x).
 

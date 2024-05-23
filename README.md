@@ -6,6 +6,14 @@ For more information and up-to-date versions, check the official GSR git page:
 
 ## Quick Readme (also included in the HLSL file)
 
+### SGSR is used the same way FSR1 is used. Like this:
+
+- Call SGSR pass right after you anti-alias (if) your image and before applying any kind of noise or grain to it
+- Provide a low ress RT (the size you are rendering your scene) to the SgsrYuvH() function.
+Keep in mind your viewport/screen size must be the size you want to upscale (max up to 2x).
+
+### Integration:
+
 1. Include the `sgsr_mobile.hlsl` file in your post-process shader.
 
 2. Use the `UNITY_DECLARE_TEX2D` Macro as it takes care of both the Texture and Sampler declaration, like so:
@@ -33,3 +41,4 @@ Example usage:
 ```hlsl
 half4 color = half4(0, 0, 0, 1);
 SgsrYuvH(color, i.uv, _MainTex_TexelSize);
+```

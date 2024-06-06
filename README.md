@@ -31,7 +31,7 @@ Note: Keep in mind your viewport/screen size must be the size you want to upscal
 
 ### Function Parameters Explanation:
 
-- **_MainTex_TexelSize**: Should be a `float4` containing `{1.0/low_res_tex_width, 1.0/low_res_tex_height, low_res_tex_width, low_res_tex_height}`.
+- **ViewportInfo**: Should be a `float4` containing `{1.0/screen_width, 1.0/screen_height, screen_width, screen_height}`.
   - The `xy` components will be used to shift UVs to read adjacent texels.
   - The `zw` components will be used to map from UV space `[0, 1][0, 1]` to image space `[0, w][0, h]`.
   
@@ -41,5 +41,5 @@ Note: Keep in mind your viewport/screen size must be the size you want to upscal
 Example usage:
 ```hlsl
 half4 color = half4(0, 0, 0, 1);
-SgsrYuvH(color, i.uv, _MainTex_TexelSize);
+SgsrYuvH(color, i.uv, ViewportInfo);
 ```
